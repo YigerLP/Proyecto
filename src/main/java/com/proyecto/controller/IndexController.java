@@ -45,4 +45,14 @@ public class IndexController {
         
         return "tiposProducto";
     }
+    
+    @GetMapping("/carritoCompras/")
+    public String IrCarrito(Model model){
+        
+        //var tiposProductos = tiposProductoService.getTiposProductos();
+        
+        //model.addAttribute("tiposProductos", tiposProductos);
+        
+        return "carritoCompras";
+    }
 }

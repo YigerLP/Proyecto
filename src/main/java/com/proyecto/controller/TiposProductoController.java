@@ -22,7 +22,7 @@ public class TiposProductoController {
     @PostMapping("/tipoProducto/guardar")
     public String guardarTipoProducto(TiposProducto tiposProducto){
         productoService.save(tiposProducto);
-        return "redirect:/tiposProducto";
+        return "redirect:/tiposProducto/";
     }
     
     @GetMapping("/modificarTipoProducto/{COD_TIPO_PRODUCTO}")
@@ -35,6 +35,6 @@ public class TiposProductoController {
     @GetMapping("/eliminarTipoProducto/{COD_TIPO_PRODUCTO}")
     public String eliminarTipoProducto(TiposProducto tiposProducto){
         productoService.delete(tiposProducto);
-        return "redirect:/tiposProducto";
+        return "redirect:/tiposProducto/";
     }
 }
