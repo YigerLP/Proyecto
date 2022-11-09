@@ -14,7 +14,7 @@
     <name>proyecto</name>
     <description>Proyecto Skin Care Tienda</description>
     <properties>
-        <java.version>15</java.version>
+        <java.version>19</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -22,8 +22,6 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
-            
-            
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
@@ -31,15 +29,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
-
-
-        <dependency> 
+        <dependency>
        <groupId>org.springframework.boot</groupId>
-           <artifactId>spring-boot-starter-security</artifactId> 
-             <version>2.6.9</version> 
-        </dependency> 
-
+           <artifactId>spring-boot-starter-security</artifactId>
+             <version>2.6.9</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
@@ -57,25 +51,20 @@
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
-                
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
             <version>5.2.0</version>
         </dependency>
-                
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator-core</artifactId>
         </dependency>
-        
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>jquery</artifactId>
             <version>3.4.1</version>
         </dependency>
-                
-                
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -86,12 +75,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>com.registro.usuarios</groupId>
-            <artifactId>com.registro.usuarios</artifactId>
-            <version>1.0</version>
-            <type>jar</type>
-        </dependency>
+
     </dependencies>
 
     <build>
