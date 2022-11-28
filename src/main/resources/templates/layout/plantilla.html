@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html 
     xmlns:th="http://www.thymeleaf.org"
@@ -67,7 +68,13 @@
                                 <a class="nav-link" aria-current="page" th:href="@{/login}">Inicio de Sesion</a>
 
                             </li>
-
+                            <div>
+                                <a th:href="@{/carritoCompras/}">
+                                    <figure>
+                                        <img src="/../../images/ShoppingCart.png" alt="Carrito de Compras"  width="30" height="30" class="d-inline-block align-text-top" />
+                                    </figure>
+                                </a>
+                            </div>
 
                         </ul>
                     </div>
@@ -116,9 +123,50 @@
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
         </header>
-
         <footer th:fragment="footer">
-            <p style="text-align: center;">&COPY;Derechos Reservados 2022</p>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Servicios</h3>
+                        <ul>
+                            <li><a href="#">Pagina Principal</a></li>
+                            <li><a href="#">Perfil</a></li>
+                            <li><a href="#">Ordenes</a></li>
+                            <li><a href="#">Ofertas</a></li>
+                            <li><a href="#">Catalogo</a></li>    
+
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Acerca de</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Legacy</a></li>
+                            <li><a href="#">Condiciones de Uso</a></li>
+                            <li><a href="#">Terminos y Condiciones</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="#">Chat</a></li>
+                            <li><a href="#">E-mail</a></li>
+                            <li><a href="#">Llamada telefonica</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row justify-content-center text-center">
+                    <div class="col-12 item social">
+                        <a href="#"><i class="icon ion-social-facebook"></i></a>
+                        <a href="#"><i class="icon ion-social-twitter"></i></a>
+                        <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                        <a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <p class="Copyright">&COPY;Derechos Reservados 2022</p>
+                    </div>
+                </div>
+            </div>
         </footer>
+
     </body>
-</html><
+</html>
