@@ -35,14 +35,19 @@ public class AppController {
 
         userRepo.save(user);
 
-        return "register_success";
+        return "index";
     }
 
-    @GetMapping("/users")
+    @GetMapping("/index")
     public String listUsers(Model model) {
         List<User> listUsers = userRepo.findAll();
         model.addAttribute("listUsers", listUsers);
 
-        return "users";
+        return "index";
+    }
+    
+    @GetMapping("/login")
+    public String loginPage(){
+        return "login";
     }
 }
