@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html 
     xmlns:th="http://www.thymeleaf.org"
@@ -8,13 +7,13 @@
         <meta charset="UTF-8" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
             <!--<link href="/css/slide.css" rel="stylesheet" type="text/css"/>-->
-            <link href="/css/estilos.css" rel="stylesheet" type="text/css"/>
+            <link href="/css/estilos.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <header th:fragment="header">
             <nav class="navbar navbar-expand-lg nav-skin">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" th:href="@{/index}">
                         <img src="/images/SkinCareShop.jpg" alt="Logo de Tienda" class="img-fluid" style="border-radius: 50%!important; width: 50px; height: 50px;" />
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,47 +62,59 @@
         </header>
         <footer th:fragment="footer">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-sm-4 col-md-3 item">
-                        <h3>Servicios</h3>
-                        <ul>
-                            <li><a href="#">Pagina Principal</a></li>
-                            <li><a href="#">Perfil</a></li>
-                            <li><a href="#">Ordenes</a></li>
-                            <li><a href="#">Ofertas</a></li>
-                            <li><a href="#">Catalogo</a></li>    
+                <footer class="py-5">
+                    <div class="row">
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>Servicios</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pagina Principal</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Perfil</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Productos</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ordenes</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ofertas</a></li>
+                            </ul>
+                        </div>
 
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>Acerca de</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Quienes Somos?</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Equipo Skincare</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Acerca de nuestros productos</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terminos y Condiciones</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-6 col-md-2 mb-3">
+                            <h5>Contacto</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">WhatsApp Chat</a></li>
+                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">E-mail</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-5 offset-md-1 mb-3">
+                            <form>
+                                <h5>Subscribirse para recibir ofertas mensuales</h5>
+                                <p>Recibe un boletin mensual con nuestros productos en oferta</p>
+                                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                    <label for="newsletter1" class="visually-hidden">E-mail</label>
+                                    <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                                        <button class="btn btn-primary" type="button">Subscribirse</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                        <p>&copy; 2022 Company, Inc. All rights reserved.</p>
+                        <ul class="list-unstyled d-flex">
+                            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#whatsapp"/></svg> <i class="fas fa-whatsapp"></i></a></li>
+                            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg><i class="fas fa-instagram"></i></a></li>
+                            <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg><i class="fas fa-facebook"></i></a></li>
                         </ul>
                     </div>
-                    <div class="col-sm-4 col-md-3 item">
-                        <h3>Acerca de</h3>
-                        <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">Legacy</a></li>
-                            <li><a href="#">Condiciones de Uso</a></li>
-                            <li><a href="#">Terminos y Condiciones</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-4 col-md-3 item">
-                        <h3>Customer Service</h3>
-                        <ul>
-                            <li><a href="#">Chat</a></li>
-                            <li><a href="#">E-mail</a></li>
-                            <li><a href="#">Llamada telefonica</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row justify-content-center text-center">
-                    <div class="col-12 item social">
-                        <a href="#"><i class="icon ion-social-facebook"></i></a>
-                        <a href="#"><i class="icon ion-social-twitter"></i></a>
-                        <a href="#"><i class="icon ion-social-snapchat"></i></a>
-                        <a href="#"><i class="icon ion-social-instagram"></i></a>
-                        <p class="Copyright">&COPY;Derechos Reservados 2022</p>
-                    </div>
-                </div>
+                </footer>
             </div>
         </footer>
-    </body>
-</html>
+=======

@@ -16,25 +16,25 @@ public class ProductoController {
     @GetMapping("/producto/nuevo")
     public String nuevoProducto(Producto producto){
         
-        return "modificarProducto";
+        return "productos/modificarProducto";
     }
     
     @PostMapping("/producto/guardar")
     public String guardarProducto(Producto producto){
         productoService.save(producto);
-        return "redirect:/producto/";
+        return "redirect:/productos/producto/";
     }
     
     @GetMapping("/modificarProducto/{ID_PRODUCTO}")
     public String modificarProducto(Producto producto, Model model){
         producto = productoService.getProducto(producto);
         model.addAttribute("producto", producto);
-        return "modificarProducto";
+        return "productos/modificarProducto";
     }
     
     @GetMapping("/eliminarProducto/{ID_PRODUCTO}")
     public String eliminarProducto(Producto producto){
         productoService.delete(producto);
-        return "redirect:/producto/";
+        return "redirect:/productos/producto/";
     }
 }

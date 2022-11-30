@@ -1,35 +1,15 @@
-a {
-    background-color: blue;
-    color: white;
+.nav-skin{
+    background-color: #98DDCA;
 }
 
-a:hover{
-    background-color: red;
-    color: white;
-    font-size: 22px;
+.table-mant-head{
+    background-color:#98DDCA;
 }
 
-header{
-    text-align: center;
-    background-color: black;
-    color: white;
+.btn-skin{
+    background-color:#98DDCA;
 }
 
-article header{
-    text-align: center;
-    background-color: green;
-    color: black;
+body{
+    background-color: #FFFFFF;
 }
-
-figcaption{
-    color: red;
-}
-
-#aviso{
-    background-color: #998b58;
-}
-
-.producto{
-    background-color: #99d18b;
-}
-
