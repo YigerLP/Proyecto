@@ -16,25 +16,25 @@ public class TiposProductoController {
     @GetMapping("/tipoProducto/nuevo")
     public String nuevoTipoProducto(TiposProducto tiposProducto){
         
-        return "modificarTiposProducto";
+        return "/tipoProducto/modificarTiposProducto";
     }
     
     @PostMapping("/tipoProducto/guardar")
     public String guardarTipoProducto(TiposProducto tiposProducto){
         productoService.save(tiposProducto);
-        return "redirect:/tiposProducto/";
+        return "redirect:/tipoProducto/tiposProducto/";
     }
     
     @GetMapping("/modificarTipoProducto/{COD_TIPO_PRODUCTO}")
     public String modificarTipoProducto(TiposProducto tiposProducto, Model model){
         tiposProducto = productoService.getTiposProducto(tiposProducto);
         model.addAttribute("producto", tiposProducto);
-        return "modificarProducto";
+        return "tipoProducto/modificarProducto";
     }
     
     @GetMapping("/eliminarTipoProducto/{COD_TIPO_PRODUCTO}")
     public String eliminarTipoProducto(TiposProducto tiposProducto){
         productoService.delete(tiposProducto);
-        return "redirect:/tiposProducto/";
+        return "redirect:/tipoProducto/tiposProducto/";
     }
 }

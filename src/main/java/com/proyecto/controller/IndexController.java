@@ -16,43 +16,53 @@ public class IndexController {
     @Autowired
     private TiposProductoService tiposProductoService;
     
-    @GetMapping("/catalogo/")
+    @GetMapping("/productos/catalogo/")
     public String IrCatalogo(Model model){
         
         var productos = productoService.getProductos();
         
         model.addAttribute("productos", productos);
         
-        return "catalogo";
+        return "/productos/catalogo";
     }
     
-    @GetMapping("/producto/")
+    @GetMapping("/productos/producto/")
     public String IrProductos(Model model){
         
         var productos = productoService.getProductos();
         
         model.addAttribute("productos", productos);
         
-        return "producto";
+        return "/productos/producto";
     }
     
-    @GetMapping("/tiposProducto/")
+    @GetMapping("/tipoProducto/tiposProducto")
     public String IrTiposProductos(Model model){
         
         var tiposProductos = tiposProductoService.getTiposProductos();
         
         model.addAttribute("tiposProductos", tiposProductos);
         
-        return "tiposProducto";
+        return "/tipoProducto/tiposProducto";
     }
     
-    @GetMapping("/carritoCompras/")
+    @GetMapping("/carrito/carritoCompras/")
     public String IrCarrito(Model model){
         
         //var tiposProductos = tiposProductoService.getTiposProductos();
         
         //model.addAttribute("tiposProductos", tiposProductos);
         
-        return "carritoCompras";
+        return "/carrito/carritoCompras";
+    }
+    
+    @GetMapping("/user/login/")
+    public String IrLogin(Model model){
+        
+        //var tiposProductos = tiposProductoService.getTiposProductos();
+        
+        //model.addAttribute("tiposProductos", tiposProductos);
+        
+        return "/user/login";
     }
 }
