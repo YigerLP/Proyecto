@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head th:replace="layout/plantilla :: head">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <div class="text-center">
+            <h2>Carrito de Compras</h2>
+        </div>
+        <div class="row justify-content-center text-center mb-5">
+            <div class="col-3">
+                Listado de Items
+            </div>
+            <div class="col-3">
+                Metodos de Pago y Entrega
+            </div>
+            <div class="col-3">
+                Resumen y Totales de Orden
+            </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

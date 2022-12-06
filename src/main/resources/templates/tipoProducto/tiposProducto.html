@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head th:replace="layout/plantilla :: head">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <h2>Mantenimiento de Tipos de Productos</h2>
+                </div>
+            </div>
+            <div class="row mt-4 mb-4">
+                <div class="col-12 text-left">
+                    <button th:href="@{/tipoProducto/nuevo}" type="button" title="Agregar" class="btn btn-skin">Nuevo Tipo Producto</button>
+                </div>
+            </div>
+            <div th:if="${tiposProductos != null and !tiposProductos.empty}">
+                <table class="table table-responsive table-hover">
+                    <thead class="table-mant-head text-center">
+                        <tr>
+                            <th>Cod Tipo Producto</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                            <th>Porcentaje de Descuento</th>
+                            <th>Eliminar</th>
+                            <th>Modificar</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr th:each="tipoProductos : ${tiposProductos}">
+                            <td>[[${tipoProductos.COD_TIPO_PRODUCTO}]]</td>
+                            <td>[[${tipoProductos.DESCRIPCION}]]</td>
+                            <td>[[${tipoProductos.ESTADO}]]</td>
+                            <td>[[${tipoProductos.PORC_DESCUENTO}]]</td>
+                            <td><button type="button" class="btn btn-skin" title="Eliminar" th:href="@{/eliminarTipoProducto/} + ${tipoProductos.COD_TIPO_PRODUCTO}">Eliminar</button></td>
+                            <td><button type="button" class="btn btn-skin" title="Modificar" th:href="@{/modificarTipoProducto/} + ${tipoProductos.COD_TIPO_PRODUCTO}">Modificar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${tiposProductos == null or tiposProductos.empty}">
+                No se tienen tipos de productos que mostrar!
+            </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"></footer>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

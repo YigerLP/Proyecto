@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head th:replace="layout/plantilla :: head">
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <div class="container-fluid">
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <h2>Mantenimiento de Productos</h2>
+                </div>
+            </div>
+            <div class="row mt-4 mb-4">
+                <div class="col-12 text-left">
+                    <button th:href="@{/producto/nuevo}" type="button" title="Agregar" class="btn btn-skin">Nuevo Producto</button>
+                </div>
+            </div>
+            <div th:if="${productos != null and !productos.empty}">
+                <table class="table table-responsive table-hover">
+                    <thead class="table-mant-head text-center">
+                        <tr>
+                            <th>ID Producto</th>
+                            <th>Cod Tipo Producto</th>
+                            <th>Descripción</th>
+                            <th>Detalle</th>
+                            <th>Estado</th>
+                            <th>Precio</th>
+                            <th>Existencias</th>
+                            <th>Eliminar</th>
+                            <th>Modificar</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr th:each="producto : ${productos}">
+                            <td>[[${producto.ID_PRODUCTO}]]</td>
+                            <td>[[${producto.COD_TIPO_PRODUCTO}]]</td>
+                            <td>[[${producto.DESCRIPCION}]]</td>
+                            <td>[[${producto.DETALLE}]]</td>
+                            <td>[[${producto.ESTADO}]]</td>
+                            <td>[[${producto.PRECIO}]]</td>
+                            <td>[[${producto.EXISTENCIAS}]]</td>
+                            <td><button type="button" class="btn btn-skin" title="Eliminar" th:href="@{/eliminarProducto/} + ${producto.ID_PRODUCTO}">Eliminar</button></td>
+                            <td><button type="button" class="btn btn-skin" title="Modificar" th:href="@{/modificarProducto/} + ${producto.ID_PRODUCTO}">Modificar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${productos == null or productos.empty}">
+                No se tienen productos que mostrar!
+            </div>
+        </div>
+        <footer th:replace="layout/plantilla :: footer"></header>
+        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
