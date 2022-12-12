@@ -20,14 +20,14 @@ public class AppController {
         return "index";
     }
 
-    @GetMapping("/register")
+    @GetMapping("/user/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
 
-        return "signup_form";
+        return "/user/signup_form";
     }
 
-    @PostMapping("/process_register")
+    @PostMapping("/user/process_register")
     public String processRegister(User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(user.getPassword());

@@ -56,13 +56,4 @@ public class IndexController {
         return "/carrito/carritoCompras";
     }
     
-    @GetMapping("/user/login/")
-    public String IrLogin(Model model){
-        
-        //var tiposProductos = tiposProductoService.getTiposProductos();
-        
-        //model.addAttribute("tiposProductos", tiposProductos);
-        
-        return "/user/login";
-    }
 }

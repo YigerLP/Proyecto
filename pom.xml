@@ -14,7 +14,7 @@
     <name>proyecto</name>
     <description>Proyecto Skin Care Tienda</description>
     <properties>
-        <java.version>18</java.version>
+        <java.version>15</java.version>
     </properties>
     <dependencies>
         <dependency>

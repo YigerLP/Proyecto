@@ -4,21 +4,33 @@
     <body>
         <header th:replace="layout/plantilla :: header"></header>
         <div th:if="${productos != null and !productos.empty}">
-            <div class="card" th:each="producto : ${productos}" >
-                <!--<img src="/img/leon.jpg" class="card-img-top" alt="equipo">-->
-                <div class="card-body">
-                    <h5 class="card-title">[[${producto.DESCRIPCION}]]</h5>
-                    <h6 class="card-subtitle mb-2 text-muted text-end">[[${new java.text.DecimalFormat('¢#,##0.00').format(producto.PRECIO)}]]</h6>
-                    <a class="card-link" th:href="@{/carrito/agregar/} + ${producto.ID_PRODUCTO}">Comprar</a>
-                    <p class="card-text">[[${producto.DETALLE}]]</p>
+            <br>
+            <div class="row row-cols-1 row-cols-md-3 g-4" th:each="producto : ${productos}">
+                <div class="col">
+                    <div class="card h-100">
+
+
+                        <h5 <img class="card-img-top" src="${producto.rutaImagen}">[[${producto.rutaImagen}]]</h5>
+
+                        <div class="card-body">
+                            <h5 class="card-title">[[${producto.DESCRIPCION}]]</h5>
+                            <h6 class="card-subtitle mb-2 text-muted text-end">[[${new java.text.DecimalFormat('¢#,##0.00').format(producto.PRECIO)}]]</h6>
+                            <p class="card-text">[[${producto.DETALLE}]]</p>
+                            <a class="card-link" th:href="@{/carrito/agregar/} + ${producto.ID_PRODUCTO}">Comprar</a>
+                        </div>
+                    </div>
                 </div>
+
+
+
+
+
             </div>
-        </div>
-        <div th:if="${productos == null or productos.empty}">
-            No se tienen productos que mostrar!
-        </div>
-        <footer th:replace="layout/plantilla :: footer"></footer>
-        <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
-        <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+            <div th:if="${productos == null or productos.empty}">
+                No se tienen productos que mostrar!
+            </div>
+            <footer th:replace="layout/plantilla :: footer"></footer>
+            <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+            <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>
