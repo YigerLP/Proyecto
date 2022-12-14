@@ -12,7 +12,7 @@
             </div>
             <div class="row mt-4 mb-4">
                 <div class="col-12 text-left">
-                    <button th:href="@{/producto/nuevo}" type="button" title="Agregar" class="btn btn-skin">Nuevo Producto</button>
+                    <a th:href="@{/productos/nuevo}" type="button" title="Agregar" class="btn btn-skin">Nuevo Producto</a>
                 </div>
             </div>
             <div th:if="${productos != null and !productos.empty}">
@@ -39,8 +39,8 @@
                             <td>[[${producto.ESTADO}]]</td>
                             <td>[[${producto.PRECIO}]]</td>
                             <td>[[${producto.EXISTENCIAS}]]</td>
-                            <td><button type="button" class="btn btn-skin" title="Eliminar" th:href="@{/eliminarProducto/} + ${producto.ID_PRODUCTO}">Eliminar</button></td>
-                            <td><button type="button" class="btn btn-skin" title="Modificar" th:href="@{/modificarProducto/} + ${producto.ID_PRODUCTO}">Modificar</button></td>
+                            <td><a class="btn btn-skin" title="Eliminar" th:href="@{/productos/eliminarProducto/} + ${producto.ID_PRODUCTO}">Eliminar</a></td>
+                            <td><a class="btn btn-skin" title="Modificar" th:href="@{/productos/modificarProducto/} + ${producto.ID_PRODUCTO}">Modificar</a></td>
                         </tr>
                     </tbody>
                 </table>

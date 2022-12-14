@@ -1,5 +1,6 @@
 package com.proyecto;
 
+import com.proyecto.service.TiposProductoService;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class AppController {
 
     @Autowired
     private UserRepository userRepo;
+    
+    @Autowired
+    private TiposProductoService tiposProductoService;
 
     @GetMapping("")
     public String viewHomePage() {
@@ -42,6 +46,8 @@ public class AppController {
     public String listUsers(Model model) {
         List<User> listUsers = userRepo.findAll();
         model.addAttribute("listUsers", listUsers);
+        var tiposProducto = tiposProductoService.getTiposProductos();
+        model.addAttribute("tiposProductos", tiposProducto);
 
         return "index";
     }

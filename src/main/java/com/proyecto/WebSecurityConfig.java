@@ -16,9 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	@Autowired
-	private DataSource dataSource;
-	
+
 	@Bean
 	public UserDetailsService userDetailsService() {
 		return new CustomUserDetailsService();
@@ -40,17 +38,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.authenticationProvider(authenticationProvider());
+            auth.inMemoryAuthentication()
+                .withUser("juan").password("{noop}123").roles("ADMIN", "VENDEDOR", "USER")
+                .and()
+                .withUser("rebeca").password("{noop}456").roles("VENDEDOR", "USER")
+                .and()
+                .withUser("pedro").password("{noop}789").roles("USER");
+            //auth.authenticationProvider(authenticationProvider());
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
+                        //.antMatchers("/index").hasRole("ADMIN")
 			.antMatchers("/index").permitAll()
 			.anyRequest().permitAll()
 			.and()
 			.formLogin()
-				.permitAll()
                         .loginPage("/login")
                         .usernameParameter("email")
 			.and()

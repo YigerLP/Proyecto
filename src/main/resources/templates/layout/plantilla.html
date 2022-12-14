@@ -26,11 +26,13 @@
                                 <a class="nav-link" aria-current="page" th:href="@{/index}">Inicio</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" th:href="@{/productos/catalogo/}" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Catálogo
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <!-- Se llena con los tipos de productos de Base de datos -->
+                                    <li th:each=" i : ${tiposProductos}">
+                                        <a class="dropdown-item" th:text="${i.DESCRIPCION}" th:href="@{/productos/catalogo/}"></a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item">
@@ -40,10 +42,10 @@
                                 <a class="nav-link" aria-current="page" th:href="@{/productos/producto/}">Productos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" th:href="@{/user/register/}">Registro</a>
+                                <a class="nav-link" aria-current="page" th:href="@{/tipoProducto/tiposProducto/}">Tipos Productos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" th:href="@{/tipoProducto/tiposProducto/}">Tipos Productos</a>
+                                <a class="nav-link" aria-current="page" th:href="@{/user/register/}">Registro</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" aria-current="page" th:href="@{/login/}">Inicio de Sesion</a>

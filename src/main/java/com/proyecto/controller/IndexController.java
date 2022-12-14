@@ -1,7 +1,9 @@
 package com.proyecto.controller;
 
+import com.proyecto.domain.TiposProducto;
 import com.proyecto.service.ProductoService;
 import com.proyecto.service.TiposProductoService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,16 @@ public class IndexController {
     
     @Autowired
     private TiposProductoService tiposProductoService;
+    
+    private List<TiposProducto> tiposProducto;
+    
+    @GetMapping("/")
+    public String Inicio(Model model){
+        tiposProducto = tiposProductoService.getTiposProductos();
+        model.addAttribute("tiposProductos", tiposProducto);
+        
+        return "/index";
+    }
     
     @GetMapping("/productos/catalogo/")
     public String IrCatalogo(Model model){

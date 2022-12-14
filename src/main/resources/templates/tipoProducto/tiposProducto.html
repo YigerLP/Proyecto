@@ -12,7 +12,7 @@
             </div>
             <div class="row mt-4 mb-4">
                 <div class="col-12 text-left">
-                    <button th:href="@{/tipoProducto/nuevo}" type="button" title="Agregar" class="btn btn-skin">Nuevo Tipo Producto</button>
+                    <a th:href="@{/tipoProducto/nuevo}" title="Agregar" class="btn btn-skin">Nuevo Tipo Producto</a>
                 </div>
             </div>
             <div th:if="${tiposProductos != null and !tiposProductos.empty}">
@@ -33,8 +33,8 @@
                             <td>[[${tipoProductos.DESCRIPCION}]]</td>
                             <td>[[${tipoProductos.ESTADO}]]</td>
                             <td>[[${tipoProductos.PORC_DESCUENTO}]]</td>
-                            <td><button type="button" class="btn btn-skin" title="Eliminar" th:href="@{/eliminarTipoProducto/} + ${tipoProductos.COD_TIPO_PRODUCTO}">Eliminar</button></td>
-                            <td><button type="button" class="btn btn-skin" title="Modificar" th:href="@{/modificarTipoProducto/} + ${tipoProductos.COD_TIPO_PRODUCTO}">Modificar</button></td>
+                            <td><a type="button" class="btn btn-skin" title="Eliminar" th:href="@{/tipoProducto/eliminarTipoProducto/} + ${tipoProductos.COD_TIPO_PRODUCTO}">Eliminar</a></td>
+                            <td><a type="button" class="btn btn-skin" title="Modificar" th:href="@{/tipoProducto/modificarTipoProducto/} + ${tipoProductos.COD_TIPO_PRODUCTO}">Modificar</a></td>
                         </tr>
                     </tbody>
                 </table>

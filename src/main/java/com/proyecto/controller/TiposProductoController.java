@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class TiposProductoController {
     @Autowired
-    private TiposProductoService productoService;
+    private TiposProductoService tiposProductoService;
     
     @GetMapping("/tipoProducto/nuevo")
     public String nuevoTipoProducto(TiposProducto tiposProducto){
@@ -21,20 +21,20 @@ public class TiposProductoController {
     
     @PostMapping("/tipoProducto/guardar")
     public String guardarTipoProducto(TiposProducto tiposProducto){
-        productoService.save(tiposProducto);
+        tiposProductoService.save(tiposProducto);
         return "redirect:/tipoProducto/tiposProducto/";
     }
     
-    @GetMapping("/modificarTipoProducto/{COD_TIPO_PRODUCTO}")
+    @GetMapping("/tipoProducto/modificarTipoProducto/{COD_TIPO_PRODUCTO}")
     public String modificarTipoProducto(TiposProducto tiposProducto, Model model){
-        tiposProducto = productoService.getTiposProducto(tiposProducto);
-        model.addAttribute("producto", tiposProducto);
-        return "tipoProducto/modificarProducto";
+        tiposProducto = tiposProductoService.getTiposProducto(tiposProducto);
+        model.addAttribute("tiposProducto", tiposProducto);
+        return "/tipoProducto/modificarTiposProducto";
     }
     
-    @GetMapping("/eliminarTipoProducto/{COD_TIPO_PRODUCTO}")
+    @GetMapping("/tipoProducto/eliminarTipoProducto/{COD_TIPO_PRODUCTO}")
     public String eliminarTipoProducto(TiposProducto tiposProducto){
-        productoService.delete(tiposProducto);
+        tiposProductoService.delete(tiposProducto);
         return "redirect:/tipoProducto/tiposProducto/";
     }
 }
