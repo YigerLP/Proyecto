@@ -5,26 +5,16 @@
         <header th:replace="layout/plantilla :: header"></header>
         <div th:if="${productos != null and !productos.empty}">
             <br>
-            <div class="row row-cols-1 row-cols-md-3 g-4" th:each="producto : ${productos}">
-                <div class="col">
-                    <div class="card h-100">
-
-
-                        <h5 <img class="card-img-top" src="${producto.rutaImagen}">[[${producto.rutaImagen}]]</h5>
-
-                        <div class="card-body">
-                            <h5 class="card-title">[[${producto.DESCRIPCION}]]</h5>
-                            <h6 class="card-subtitle mb-2 text-muted text-end">[[${new java.text.DecimalFormat('¢#,##0.00').format(producto.PRECIO)}]]</h6>
-                            <p class="card-text">[[${producto.DETALLE}]]</p>
-                            <a class="card-link" th:href="@{/carrito/agregar/} + ${producto.ID_PRODUCTO}">Comprar</a>
-                        </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4" th:if="${productos != null and !productos.empty}">
+                <div class="card h-100" th:each="producto : ${productos}">
+                    <img class="card-img-top" style="max-height: 200px; max-width: 200px;" th:src="${producto.rutaImagen}">
+                    <div class="card-body">
+                        <h5 class="card-title">[[${producto.DESCRIPCION}]]</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-end">[[${new java.text.DecimalFormat('¢#,##0.00').format(producto.PRECIO)}]]</h6>
+                        <p class="card-text">[[${producto.DETALLE}]]</p>
+                        <a class="card-link" th:href="@{/carrito/agregar/} + ${producto.ID_PRODUCTO}">Comprar</a>
                     </div>
                 </div>
-
-
-
-
-
             </div>
             <div th:if="${productos == null or productos.empty}">
                 No se tienen productos que mostrar!

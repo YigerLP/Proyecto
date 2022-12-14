@@ -36,4 +36,9 @@ public class ProductoServiceImpl implements ProductoService {
     public void delete (Producto producto){
         productoDao.delete(producto);
     }
+    
+    @Override
+    public Producto getProductoPorDescripcion (String descripcion){
+        return productoDao.findByDESCRIPCION(descripcion);
+    }
 }

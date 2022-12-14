@@ -44,4 +44,10 @@ public class ProductoController {
         productoService.delete(producto);
         return "redirect:/productos/producto/";
     }
+    
+    @GetMapping("/productos/buscar")
+    public String Buscar(String descripcion){
+        productoService.getProductoPorDescripcion(descripcion);
+        return "/productos/producto/";
+    }
 }

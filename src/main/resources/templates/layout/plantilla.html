@@ -52,6 +52,10 @@
 
                             </li>
                         </ul>
+                        <form class="d-flex" th:action="@{/productos/buscar}" method="post" th:object="${producto}">
+                            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar" />
+                            <a class="btn btn-outline-success" type="submit">Buscar</a>
+                        </form>
                         <div class="nav-item">
                             <a th:href="@{/carrito/carritoCompras/}">
                                 <figure>
@@ -120,4 +124,5 @@
                 </footer>
             </div>
         </footer>
-=======
+    </body>
+    =======
