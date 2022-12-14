@@ -59,9 +59,9 @@ public class ProductoController {
     @GetMapping("/productos/agregar/{ID_PRODUCTO}")
     public String AgregarCarrito(Producto producto){
         producto = productoService.getProducto(producto);
-        var carrito = new Carrito("ADMIN", producto.getPRECIO(), 1, producto.getID_PRODUCTO(), producto.getPRECIO() * 1, producto.getCOD_TIPO_PRODUCTO());
+        var carrito = new Carrito("ADMIN", producto.getPRECIO(), 1, producto.getID_PRODUCTO(), producto.getPRECIO() * 1, producto.getCOD_TIPO_PRODUCTO(), producto.getDESCRIPCION());
         carritoService.save(carrito);
         
-        return "/productos/catalogo";
+        return "redirect:/productos/catalogo/";
     }
 }
