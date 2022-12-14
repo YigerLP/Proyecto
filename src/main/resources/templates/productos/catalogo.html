@@ -12,7 +12,7 @@
                         <h5 class="card-title">[[${producto.DESCRIPCION}]]</h5>
                         <h6 class="card-subtitle mb-2 text-muted text-end">[[${new java.text.DecimalFormat('¢#,##0.00').format(producto.PRECIO)}]]</h6>
                         <p class="card-text">[[${producto.DETALLE}]]</p>
-                        <a class="card-link" th:href="@{/carrito/agregar/} + ${producto.ID_PRODUCTO}">Comprar</a>
+                        <a class="card-link" th:href="@{/productos/agregar/} + ${producto.ID_PRODUCTO}">Comprar</a>
                     </div>
                 </div>
             </div>

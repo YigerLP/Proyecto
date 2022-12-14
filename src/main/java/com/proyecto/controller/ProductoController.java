@@ -1,6 +1,8 @@
 package com.proyecto.controller;
 
+import com.proyecto.domain.Carrito;
 import com.proyecto.domain.Producto;
+import com.proyecto.service.CarritoService;
 import com.proyecto.service.ProductoService;
 import com.proyecto.service.TiposProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,9 @@ public class ProductoController {
     
     @Autowired
     private TiposProductoService tiposProductoService;
+    
+    @Autowired
+    private CarritoService carritoService;
     
     @GetMapping("/productos/nuevo")
     public String nuevoProducto(Producto producto, Model model){
@@ -49,5 +54,14 @@ public class ProductoController {
     public String Buscar(String descripcion){
         productoService.getProductoPorDescripcion(descripcion);
         return "/productos/producto/";
+    }
+    
+    @GetMapping("/productos/agregar/{ID_PRODUCTO}")
+    public String AgregarCarrito(Producto producto){
+        producto = productoService.getProducto(producto);
+        var carrito = new Carrito("ADMIN", producto.getPRECIO(), 1, producto.getID_PRODUCTO(), producto.getPRECIO() * 1, producto.getCOD_TIPO_PRODUCTO());
+        carritoService.save(carrito);
+        
+        return "/productos/catalogo";
     }
 }

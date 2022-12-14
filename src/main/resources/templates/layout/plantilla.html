@@ -30,7 +30,7 @@
                                     Catálogo
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li th:each=" i : ${tiposProductos}">
+                                    <li th:each="i : ${tiposProductos}">
                                         <a class="dropdown-item" th:text="${i.DESCRIPCION}" th:href="@{/productos/catalogo/}"></a>
                                     </li>
                                 </ul>

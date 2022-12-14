@@ -1,6 +1,7 @@
 package com.proyecto.controller;
 
 import com.proyecto.domain.TiposProducto;
+import com.proyecto.service.CarritoService;
 import com.proyecto.service.ProductoService;
 import com.proyecto.service.TiposProductoService;
 import java.util.List;
@@ -19,6 +20,9 @@ public class IndexController {
     private TiposProductoService tiposProductoService;
     
     private List<TiposProducto> tiposProducto;
+    
+    @Autowired
+    private CarritoService carritoService;
     
     @GetMapping("/")
     public String Inicio(Model model){
@@ -61,9 +65,9 @@ public class IndexController {
     @GetMapping("/carrito/carritoCompras/")
     public String IrCarrito(Model model){
         
-        //var tiposProductos = tiposProductoService.getTiposProductos();
+        var carrito = carritoService.getCarritos();
         
-        //model.addAttribute("tiposProductos", tiposProductos);
+        model.addAttribute("carrito", carrito);
         
         return "/carrito/carritoCompras";
     }
