@@ -15,9 +15,6 @@ public class AppController {
 
     @Autowired
     private UserRepository userRepo;
-    
-    @Autowired
-    private TiposProductoService tiposProductoService;
 
     @GetMapping("")
     public String viewHomePage() {
@@ -42,16 +39,6 @@ public class AppController {
         return "index";
     }
 
-    @GetMapping("/index")
-    public String listUsers(Model model) {
-        List<User> listUsers = userRepo.findAll();
-        model.addAttribute("listUsers", listUsers);
-        var tiposProducto = tiposProductoService.getTiposProductos();
-        model.addAttribute("tiposProductos", tiposProducto);
-
-        return "index";
-    }
-    
     @GetMapping("/login")
     public String loginPage(){
         return "login";

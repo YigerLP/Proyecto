@@ -13,7 +13,6 @@
                     <ul>
                         <li th:each="producto : ${carrito}">
                             <span th:text="${producto.descripcion}"></span>
-                            <span><a class="btn btn-skin" title="Eliminar" th:href="@{/carrito/carritoCompras/eliminarProducto/} + ${producto.id_carrito}">Eliminar</a></span>
                         </li>
                     </ul>
                 </div>
